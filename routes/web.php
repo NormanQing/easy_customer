@@ -1,18 +1,25 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+/**
+ * 递归加载所有模块化的路由
+ * 目的所有路由都放在一个文件，路由多了，就不好维护
+ * @param $path string  路由路径
+ */
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+function requireOnce($path)
+{
+    foreach (glob($path) as $file) {
+        if (is_dir($file)) {
+            $file .= '/*';
+            requireOnce($file);
+        }else{
+            require_once $file;
+        }
+    }
+    return ;
+}
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$webRoutePath = __DIR__ . '/web/*';
+
+
+requireOnce($webRoutePath);
