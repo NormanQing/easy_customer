@@ -8,9 +8,9 @@
 
 function requireOnce($path)
 {
+    $path.= '/*';
     foreach (glob($path) as $file) {
         if (is_dir($file)) {
-            $file .= '/*';
             requireOnce($file);
         }else{
             require_once $file;
@@ -19,7 +19,7 @@ function requireOnce($path)
     return ;
 }
 
-$webRoutePath = __DIR__ . '/web/*';
+$webRoutePath = __DIR__ . '/web';
 
 
 requireOnce($webRoutePath);
