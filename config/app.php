@@ -124,7 +124,7 @@ return [
     'cipher' => 'AES-256-CBC',
 
     // 后台路由前缀--后期上线使用随机的字符串做前缀，如：KJFKF/goods/info
-    'backend_route_prefix' => env('backend_route_prex', 'admin'),
+    'backend_route_prefix' => env('backend_route_prefix', 'admin'),
 
     /*
     |--------------------------------------------------------------------------

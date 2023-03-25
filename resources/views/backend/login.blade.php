@@ -22,7 +22,7 @@
 
                 <div class="wrap-input100 validate-input m-b-23" data-validate="请输入用户名">
                     <span class="label-input100">用户名</span>
-                    <input class="input100" type="text" name="username" placeholder="请输入用户名" autocomplete="off">
+                    <input class="input100" type="text" name="username" value="{{old('username')}}" placeholder="请输入用户名" autocomplete="off">
                     <span class="focus-input100" data-symbol=""></span>
                 </div>
 
@@ -34,9 +34,9 @@
 
                 <div class="wrap-input100 validate-input" data-validate="验证码">
                     <span class="label-input100">验证码</span>
-                    <input class="input100" style="width: 59%;" type="text" name="viri" placeholder="请输入验证码">
+                    <input class="input100" style="width: 59%;" type="text" name="vercode" placeholder="请输入验证码">
                     <span class="focus-input100" data-symbol=""></span>
-                    <img title="点击刷新" src="http://localhost:7092/captcha/flat?INp5DVDf?0.7402192473536418" onclick="this.src='http://localhost:7092/captcha/flat?INp5DVDf?'+Math.random();" style="position: absolute;bottom: 4px;right: 0;">
+                    <img style="position: absolute;bottom: 4px;right: 0;" title="点击刷新" src="{{ captcha_src('flat') }}" onclick="this.src='{{ captcha_src('flat') }}?'+Math.random();">
 
                 </div>
 

@@ -35,7 +35,6 @@ class LoginController extends Controller
      */
     public function loginForm()
     {
-
         return view('backend.login');
     }
 
@@ -77,7 +76,7 @@ class LoginController extends Controller
         $this->validate($request, [
             $this->username() => 'required|string',
             'password' => 'required|string',
-//            'vercode' => 'required|captcha',
+            'vercode' => 'required|captcha',
         ], [
             'vercode.required' => '请填写验证码',
             'vercode.captcha' => '验证码错误',

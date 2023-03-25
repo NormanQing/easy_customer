@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5",
+        "mews/captcha": "^3.3",
         "workerman/gateway-worker": "^3.0"
     },
     "require-dev": {
