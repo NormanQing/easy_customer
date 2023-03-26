@@ -10,17 +10,23 @@
     . GateWayWorker
 ### 部署
 
->   1、进入项目根目录
+>1、在根目录下执行命令 composer install
+>
+>2、复制.env.example为.env 配置数据库信息
 > 
->   2、执行命令 composer install
->
->   3、数据
+>3、数据
 > 
->-   执行数据迁移命令 php artisan migrate
+> -   执行数据迁移命令 php artisan migrate
 >
-> -  执行数据填充命令 php artisan db:seed
+> -  执行数据填充命令 php artisan db:seed 
 >
->   4、项目根目录下启动服务 php start.php start
+> 4、服务
+>
+> - 服务器需要开启端口8910 8920
+> - 执行启动命令 php start.php [start | stop | restart]  [-d 该参数是让启动的进程在后台执行]
+> - start: 启动服务
+> - stop: 关闭服务
+> - restart: 重启服务
 
 
 
