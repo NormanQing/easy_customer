@@ -167,7 +167,7 @@
                         <div class="zurb-div-12">
                             <div class="bg-gradient-dark p-t-10 p-b-10 position-relative">
                                 <div class="text-center text-white display-6">
-                                    <i class="fa fa-android"></i> 机器人无解
+                                    <i class="fa fa-android"></i> 机器人
                                     <div class="badge badge-success position-absolute" style="bottom:3px;right: 5px">今日</div>
                                 </div>
                             </div>
@@ -290,10 +290,6 @@
 <script src="/static/backend/theme/eon/js/jquery.counterup.min.js"></script>
 <script src="/static/backend/theme/eon/js/jquery.dialogBox.js"></script>
 
-
-<!--[if IE]>
-<script  type="text/javascript" src="js/plugins/jquery-knob/excanvas.js"></script>
-<![endif]-->
 <script src="/static/backend/theme/eon/js/jquery.knob.js"></script>
 <script src="/static/backend/theme/eon/js/equalize.min.js"></script>
 <script src="/static/backend/theme/eon/js/jquery.core.js"></script>
