@@ -190,7 +190,6 @@
                             <div class="bg-secondary p-t-10 p-b-10 position-relative">
                                 <div class="text-center text-white display-6">
                                     <i class="fa fa-file-image-o"></i> 图片总计
-                                    <div class="badge badge-success position-absolute" style="bottom:3px;right: 5px">今日</div>
                                 </div>
                             </div>
                             <div class="card-body mt-0">
