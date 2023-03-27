@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/static/backend/theme/eon/css/chartist.min.css">
     <link href="/static/backend/theme/eon/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/backend/theme/eon/css/jquery.dialogbox.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="body-main">
@@ -20,7 +21,7 @@
             <div class="topbar-main relative">
                 <div class="zurb-full">
                     <div class="logo">
-                        <a href="/{{config('app.backend_router_prefix')}}" class="logo">
+                        <a href="/{{config('app.backend_route_prefix')}}" class="logo">
                             Easy Customer
                             {{--<img src="./Dashboard 5_files/logo-sm.png" alt="" height="26" class="logo-small">
                             <img style="width: 32px;" src="/static/backend/images/logo.png" alt="" class="logo-large">
@@ -28,150 +29,23 @@
                     </div>
                     <div class="menu-other topbar-custom">
                         <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                            <li class="dropdown notification-list notification-box">
-                                <a class="nav-link dropdown-toggle waves-effect waves-light notification-box nav-user" data-toggle="dropdown" href="http://www.dmaku.com/demo/moban/2019091654100509/index5.html#" role="button" aria-haspopup="false" aria-expanded="false"> <i class="mdi mdi-bell-outline noti-icon"></i> </a>
-                                <div class="noti-dot">
-                                    <span class="dot"></span>
-                                    <span class="pulse"></span>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                                    <ul class="list-group list-no-border user-list notify-item">
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="avatar">
-                                                    <img src="/static/backend/images/r.png" alt="">
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">Gordon Lewis</span>
-                                                    <span class="desc">Someone mentioned you!</span>
-                                                    <span class="time">1 hours ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="icon bg-info">
-                                                    <i class="mdi mdi-account"></i>
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">Company Registered Forms</span>
-                                                    <span class="desc">Sign up to all users</span>
-                                                    <span class="time">1 day ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="icon bg-pink">
-                                                    <i class="mdi mdi-comment"></i>
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">New Messages</span>
-                                                    <span class="desc">Send the messages</span>
-                                                    <span class="time">5 day ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="avatar">
-                                                    <img src="./Dashboard 5_files/avatar-3.jpg" alt="">
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">Sophie White</span>
-                                                    <span class="desc">Hey! upload my new template</span>
-                                                    <span class="time">1 hour ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item ">
-                                            <a href="#" class="user-list-item">
-                                                <div class="icon bg-warning">
-                                                    <i class="mdi mdi-settings"></i>
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">Settings</span>
-                                                    <span class="desc">There will changes new upadation</span>
-                                                    <span class="time">2 minutes ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown notification-list notification-box">
-                                <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <i class="mdi mdi-email-outline"></i>
-                                </a>
-                                <div class="noti-dot">
-                                    <span class="dot"></span>
-                                    <span class="pulse"></span>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                                    <ul class="list-group list-no-border user-list notify-item">
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="icon bg-primary">
-                                                    <i class="mdi mdi-comment-processing-outline"></i>
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">New Message</span>
-                                                    <span class="desc">typing the message</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="icon bg-success">
-                                                    <i class="mdi mdi-comment-text-outline"></i>
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">New Message</span>
-                                                    <span class="desc">Send the message</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#" class="user-list-item">
-                                                <div class="icon bg-danger">
-                                                    <i class="mdi mdi-alert-box"></i>
-                                                </div>
-                                                <div class="user-desc">
-                                                    <span class="name">New Messages</span>
-                                                    <span class="desc">Not send the message</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <li class="m-t-15 m-r-10">
+                                <a href="#" class="btn btn-icon btn-purple waves-effect waves-light w-md"> <i class="fa fa-desktop"></i> <span>进入客服</span></a>
                             </li>
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                     <img src="/static/backend/images/r.png" alt="user" class="rounded-circle">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                    <a href="http://www.dmaku.com/demo/moban/2019091654100509/profile.html" class="dropdown-item notify-item">
-                                        <i class="ti-user m-r-5"></i> Profile </a>
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ti-settings m-r-5"></i> Settings </a>
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ti-anchor m-r-5"></i> Recent Activity </a>
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ti-email m-r-5"></i>View Inbox </a>
-                                    <a href="http://www.dmaku.com/demo/moban/2019091654100509/page-login.html" class="dropdown-item notify-item">
-                                        <i class="ti-lock m-r-5"></i>Sign in </a>
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ti-power-off m-r-5"></i> Logout </a>
+                                    <a href="#" class="dropdown-item notify-item">
+                                        <i class="ti-user m-r-5"></i> 修改资料
+                                    </a>
+                                    <a id="edit-pwd" href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="ti-settings m-r-5"></i> 修改密码
+                                    </a>
+                                    <a href="/{{config('app.backend_route_prefix')}}/logout" class="dropdown-item notify-item">
+                                        <i class="ti-power-off m-r-5"></i> 退出 </a>
                                 </div>
-                            </li>
-                            <li class="menu-item">
-                                <a class="navbar-toggle nav-link">
-                                    <div class="lines">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -227,6 +101,7 @@
         </div>
     </div>
 </section>
+<div id="mask-edit-pwd"></div>
 <div class="wrapper">
     <div class="zurb-full">
         <div class="new-row zurb-row">
@@ -252,8 +127,8 @@
                                 </div>
                             </div>
                             <div class="card-body mt-0">
-                                <div class="align-items-center">
-                                    <h3 class="font-medium">1</h3>
+                                <div class="align-items-center widget-user">
+                                    <h2 class="text-danger" data-plugin="counterup">1567</h2>
                                     <div class="d-flex justify-content-between">
                                         <h5>总计</h5>
                                         <h5 class="m-b-0">6376363</h5>
@@ -274,10 +149,9 @@
                                     <div class="badge badge-success position-absolute" style="bottom:3px;right: 5px">今日</div>
                                 </div>
                             </div>
-                            <div class="card-body mt-0">
+                            <div class="card-body mt-0 widget-user">
                                 <div class="align-items-center">
-                                    <h3 class="font-medium">1</h3>
-                                    <div class="d-flex justify-content-between">
+                                    <h2 class="text-secondary" data-plugin="counterup">1234</h2>                                    <div class="d-flex justify-content-between">
                                         <h5>总计</h5>
                                         <h5 class="m-b-0">6376363</h5>
                                     </div>
@@ -299,8 +173,7 @@
                             </div>
                             <div class="card-body mt-0">
                                 <div class="align-items-center">
-                                    <h3 class="font-medium">1</h3>
-                                    <div class="d-flex justify-content-between">
+                                    <h2 class="text-info" data-plugin="counterup">324</h2>                                    <div class="d-flex justify-content-between">
                                         <h5>总计</h5>
                                         <h5 class="m-b-0">6376363</h5>
                                     </div>
@@ -322,8 +195,7 @@
                             </div>
                             <div class="card-body mt-0">
                                 <div class="align-items-center">
-                                    <h3 class="font-medium">1</h3>
-                                    <div class="d-flex justify-content-between">
+                                    <h2 class="text-custom" data-plugin="counterup">324</h2>                                    <div class="d-flex justify-content-between">
                                         <h5>文件总计</h5>
                                         <h5 class="m-b-0">6376363</h5>
                                     </div>
@@ -415,6 +287,11 @@
 <script src="/static/backend/theme/eon/js/modernizr.min.js"></script>
 <script src="/static/backend/theme/eon/js/particles.js"></script>
 <script src="/static/backend/theme/eon/js/particlesapp_direction.js"></script>
+<script src="/static/backend/theme/eon/js/jquery.waypoints.min.js"></script>
+<script src="/static/backend/theme/eon/js/jquery.counterup.min.js"></script>
+<script src="/static/backend/theme/eon/js/jquery.dialogBox.js"></script>
+
+
 <!--[if IE]>
 <script  type="text/javascript" src="js/plugins/jquery-knob/excanvas.js"></script>
 <![endif]-->
@@ -422,5 +299,21 @@
 <script src="/static/backend/theme/eon/js/equalize.min.js"></script>
 <script src="/static/backend/theme/eon/js/jquery.core.js"></script>
 <script src="/static/backend/theme/eon/js/jquery.app.js"></script>
+
+<script>
+    $('#edit-pwd').on("click", function(e) {
+        $('#mask-edit-pwd').dialogBox({
+            hasClose: true,
+            hasBtn: true,
+            confirmValue: '保存',
+            confirm: function() {
+                alert('this is callback function');
+            },
+            cancelValue: '取消',
+            title: 'Dialog title',
+            content: 'This Admin Dashboard Allowed Or not'
+        });
+    })
+</script>
 
 </body></html>
