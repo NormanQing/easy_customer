@@ -14,10 +14,10 @@ class CreateAdmins extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('username', '56')->comment('账号');
             $table->string('nick_name', '56')->comment('昵称');
-            $table->tinyInteger('type')->default(0)->comment('类型：1:管理员，2：组长，0：客服');
+            $table->tinyInteger('type')->default(0)->comment('类型：1:管理员，2：组长，3：客服');
             $table->unsignedSmallInteger('group_id')->default(0)->comment('类型：0：客服,1:管理员，2：组长，');
             $table->tinyInteger('online')->default(0)->comment('在线状态：1:在线，2：离线');
             $table->string('password');

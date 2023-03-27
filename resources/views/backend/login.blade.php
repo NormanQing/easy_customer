@@ -92,4 +92,12 @@
     @endif
 </script>
 
+<script>
+    $(function () {
+        if (top != window) {
+            top.location.href = '/admin';
+        }
+    })
+</script>
+
 </body></html>

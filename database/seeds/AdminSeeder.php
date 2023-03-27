@@ -26,7 +26,5 @@ class AdminSeeder extends Seeder
             'password' => bcrypt('123456'),
             'job' => '系统管理员',
         ]);
-
-        var_dump($admin);
     }
 }
