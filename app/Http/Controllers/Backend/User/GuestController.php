@@ -9,12 +9,11 @@
 namespace App\Http\Controllers\Backend\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Admin\CreateGroupRequest;
-use App\Http\Requests\Backend\Admin\UpdateGroupRequest;
 use App\Models\Group;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 
-class GroupController extends Controller
+class GuestController extends Controller
 {
     /**
      * 客服列表
@@ -22,7 +21,7 @@ class GroupController extends Controller
      */
     public function index(Request $request)
     {
-        return view('backend.group.index');
+        return view('backend.guest.index');
     }
 
     /**
@@ -32,7 +31,7 @@ class GroupController extends Controller
      */
     public function data(Request $request)
     {
-        $model = Group::query();
+        $model = Guest::query()->with('group')->with('admin');
 
         if ($request->get('search_name')) {
             $model = $model->where('username', $request->get('search_name'));
@@ -59,50 +58,25 @@ class GroupController extends Controller
     }
 
     /**
-     * 添加页面
-     * @return \Illuminate\Support\Facades\View\View
-     */
-    public function create()
-    {
-        return view('backend.group.create');
-    }
-
-    /**
-     * 添加数据
-     * @param CreateGroupRequest $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function store(CreateGroupRequest $request)
-    {
-
-        $data = $request->all();
-
-        if (Group::create($data)) {
-            return response()->json(['code' => 0, 'msg' => '保存成功']);
-        }
-        return response()->json(['code' => 1, 'msg' => '保存失败']);
-    }
-
-    /**
      * 编辑页面
      * @return \Illuminate\Support\Facades\View\View
      */
     public function edit($id)
     {
-        $data = Group::query()->findOrFail($id);
+        $data = Guest::query()->findOrFail($id);
 
 
-        return view('backend.group.edit', ['data' => $data]);
+        return view('backend.guest.edit', ['data' => $data]);
     }
 
     /**
      * 编辑数据
-     * @param UpdateGroupRequest $request
+     * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(UpdateGroupRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $model = Group::findOrFail($id);
+        $model = Guest::findOrFail($id);
         $data = $request->all();
 
         if ($model->update($data)) {
@@ -124,38 +98,10 @@ class GroupController extends Controller
             return response()->json(['code' => 1, 'msg' => '请选择删除项']);
         }
 
-        if (in_array(1, $ids)) {
-            return response()->json(['code' => 1, 'msg' => '默认组不可删除']);
-        }
-
-        if (Group::destroy($ids)) {
+        if (Guest::destroy($ids)) {
             return response()->json(['code' => 0, 'msg' => '删除成功']);
         }
         return response()->json(['code' => 1, 'msg' => '删除失败']);
-    }
-
-    /**
-     * 启/禁状态
-     * @param $id integer
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function changeStatus($id)
-    {
-        $model = Group::findOrFail($id);
-        $data = [];
-
-        // 根据当前客服组的状态，取反操作
-        if($model->group_status){
-            $data['group_status'] = Group::OFF;
-        }else{
-            $data['group_status'] = Group::ON;
-        }
-
-
-        if ($model->update($data)) {
-            return response()->json(['code' => 0, 'msg' => '操作成功']);
-        }
-        return response()->json(['code' => 1, 'msg' => '操作失败']);
     }
 
 }

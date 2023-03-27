@@ -48,6 +48,20 @@ Route::group(['namespace' => 'Backend\User', 'prefix' => config('app.backend_rou
 
     });
 
+    //访客管理
+    Route::group(['prefix' => 'guest'], function () {
+        Route::get('', 'GuestController@index');
+        Route::get('/data', 'GuestController@data');
+
+        // 编辑
+        Route::get('/edit/{id}', 'GuestController@edit');
+        Route::post('/update/{id}', 'GuestController@update');
+
+        // 删除
+        Route::delete('/destroy', 'GuestController@destroy');
+
+    });
+
 
 });
 

@@ -66,6 +66,7 @@
                             <li class="has-submenu">
                                 <a href="#"><i class="ti-files"></i> <span> 用户管理</span> </a>
                                 <ul class="submenu">
+                                    <li><a href="/{{config('app.backend_route_prefix')}}/guest">访客管理</a></li>
                                     <li><a href="/{{config('app.backend_route_prefix')}}/admin">客服管理</a></li>
                                     <li><a href="/{{config('app.backend_route_prefix')}}/group">客服组管理</a></li>
                                 </ul>
