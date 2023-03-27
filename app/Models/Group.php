@@ -41,7 +41,6 @@ class Group extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
     ];
 
     public function getGroupStatusFormatAttribute()
