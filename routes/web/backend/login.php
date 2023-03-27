@@ -6,8 +6,6 @@
  * Time: 11:52 PM
  */
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
