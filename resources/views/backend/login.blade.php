@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/static/fonts/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="/static/backend/css/util.css">
     <link rel="stylesheet" type="text/css" href="/static/backend/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/static/backend/theme/eon/css/toastr.min.css">
 </head>
 
 <body>
@@ -59,22 +60,35 @@
     </div>
 </div>
 <script src="/static/js/jquery-3.2.1.min.js"></script>
-{{--
 <script src="/static/backend/js/login.js"></script>
---}}
+<script src="/static/backend/theme/eon/js/toastr.min.js"></script>
 
 <script>
     //表单提示信息
+    toastr.options = {
+        "closeButton": true,// 是否显示关闭按钮
+        "progressBar":true,// 是否显示进度条
+        "positionClass": "toast-top-center",// 弹出窗的位置
+        "showDuration": "1000",// 显示的动画时间
+        "hideDuration": "1000",// 消失的动画时间
+        "timeOut": "6000",// 弹窗展现时间
+        "showEasing": "swing",//显示时的动画缓冲方式
+        "hideEasing": "linear",//消失时的动画缓冲方式
+        "showMethod": "fadeIn",//显示时的动画方式
+        "hideMethod": "fadeOut", //消失时的动画方式
+        "allowHtml":true,// 允许弹窗内容包含 HTML 语言
+    };
+
     @if(count($errors)>0)
     @foreach($errors->all() as $error)
-    alert("{{$error}}",{icon:5});
+    toastr.error("{{$error}}");
     @break
     @endforeach
     @endif
 
     //正确提示
     @if(session('success'))
-    alert("{{session('success')}}",{icon:6});
+    toastr.success("{{session('success')}}");
     @endif
 </script>
 
